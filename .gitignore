@@ -1,0 +1,30 @@
+# 依赖文件夹
+# Dependencies
+/node_modules
+
+# 环境变量文件 (包含敏感信息)
+# Environment variables
+.env
+
+# 生产环境构建文件
+# Production
+/build
+/dist
+
+# 日志文件
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 操作系统生成的文件
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

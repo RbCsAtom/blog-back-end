@@ -1,4 +1,5 @@
-{
+// 使用 module.exports 替代 export
+module.exports = {
   "development": {
     "username": "postgres",
     "password": "Xzj200139",
@@ -23,4 +24,4 @@
     "port": 5432,
     "dialect": "postgres"
   }
-}
+};

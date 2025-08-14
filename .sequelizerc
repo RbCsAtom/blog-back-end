@@ -1,0 +1,15 @@
+const path = require('path');
+
+module.exports = {
+  // 指向你的配置文件
+  'config': path.resolve('config', 'config.js'),
+  
+  // 指向你的模型文件夹
+  'models-path': path.resolve('models'),
+
+  // 指向你的种子文件夹 (即使现在是空的)
+  'seeders-path': path.resolve('seeders'),
+
+  // 指向你的迁移文件夹
+  'migrations-path': path.resolve('migrations')
+};

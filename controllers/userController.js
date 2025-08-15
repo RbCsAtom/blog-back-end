@@ -38,7 +38,7 @@ exports.login = async (req, res) => {
     const token = jwt.sign(
       { id: user.id, username: user.username },
       process.env.JWT_SECRET || 'a_default_secret_key_that_should_be_changed',
-      { expiresIn: '1h' }
+      { expiresIn: '30d' }
     );
     res.status(200).json({
       message: '登录成功！',

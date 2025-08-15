@@ -2,26 +2,25 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const db = require('./models');
-const userRoutes = require('./routes/userRoutes'); // 引入用户路由
+const userRoutes = require('./routes/userRoutes');
+const postRoutes = require('./routes/postRoutes'); // 1. 引入文章路由
 
 const app = express();
 
-// 中间件
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// 根路由
 app.get('/', (req, res) => {
   res.json({ message: '欢迎来到个人博客后端！' });
 });
 
-// 使用用户路由，所有 /api/users 的请求都会被转发到 userRoutes
+// 使用路由
 app.use('/api/users', userRoutes);
+app.use('/api/posts', postRoutes); // 2. 注册文章路由
 
 const PORT = process.env.PORT || 3000;
 
-// 连接数据库并启动服务器
 db.sequelize.sync()
   .then(() => {
     app.listen(PORT, () => {
